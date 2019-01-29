@@ -1,0 +1,258 @@
+1:  < !DOCTYPE html> 
+2:  < html lang="en"> 
+3:  < head> 
+4:  < meta charset="UTF-8"> 
+6:  < title> 404 - 最精准易用的网站统计分析平台< /title> 
+7:  < meta name="description" content="我要啦 统计面向网站站长提供免费的、功能完善的、人性化的网站流量统计分析服务"> 
+9:  < meta name="keywords" content="51la,网站数据分析,网站流量统计,访问统计,免费统计工具,wap端网站流量,网站访问量,我要啦"> 
+10:  < meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+11:  < meta content="always" name="referrer"> 
+12:  < link rel="stylesheet" href="//images.51.la/v5/dist/front-style2.css?v=1548481186681"> 
+13:  < link rel="stylesheet" href="//images.51.la/v5/js/vendor/share.min.css?v=1548481186681"> 
+14:  < link rel="shortcut icon" href="/favicon.ico"> 
+15:  < sc​ript type="text/javascript"> 
+16:  var USER_ID = ''
+17:  var USER_EMAIL = ''
+18:  var USER_NAME = ''
+19:  var PATH = ''
+20:  < / sc​ript > 
+22:  < /head> 
+24:  < body> 
+26:  < style> 
+27:  .feadback-content {
+28:  position: relative;
+29:  }
+31:  .feadback-header {
+32:  display: block;
+33:  background: #5C5959 url('//images.51.la/v5/images/feedback/20181211-h5-update.png') no-repeat center center;
+34:  cursor: pointer;
+35:  height: 50px;
+36:  width: 100%;
+37:  }
+39:  .feedback-header-close {
+40:  position: absolute;
+41:  width: 20px;
+42:  height: 20px;
+43:  right: 20px;
+44:  top: 15px;
+45:  cursor: pointer;
+46:  }
+48:  .feedback-header-close .icon-guanbi {
+49:  font-size: 16px;
+50:  color: #fff;
+51:  }
+53:  /* 弹层个性化样式 */
+54:  #layerFeedback .icon-close.btn-close-feedback::after{
+55:  top: 0;
+56:  right: -26px;
+57:  }
+59:  #layerFeedback .layer-content {
+60:  position: relative;
+61:  padding: 0;
+62:  }
+63:  #layerFeedback .layer-container {
+64:  padding: 30px;
+65:  overflow: hidden;
+66:  }
+67:  #layerFeedback .layer-container img {
+68:  float: left;
+69:  margin-right: 35px;
+70:  }
+71:  #layerFeedback .layer-container p {
+72:  font-size: 18px;
+73:  text-align: left;
+74:  }
+75:  < /style> 
+77:  < div class="feadback-content"> 
+78:  < div class="feadback-header" id="new"> < /div> 
+79:  < div class="feedback-header-close"> 
+80:  < i class="iconfont icon-guanbi"> < /i> 
+81:  < /div> 
+82:  < /div> 
+83:  < sc​ript type="text/html" id="layerFeedbackTpl"> 
+84:  < i class="btn-close-feedback iconfont icon-close"> < /i> 
+85:  < div class="layer-container"> 
+86:  < img src=hxxp://images.51.la/v5/images/index/wechat.png" width="150" height="150" alt=""> 
+87:  < p class="mt25"> 操作步骤 < br/> ①关注微信公众号< br/> ②点击底部菜单【我的统计】< br/> ③登录< /p> 
+88:  < /div> 
+89:  < / sc​ript > 
+90:  < div class="slide-func​tion "> 
+91:  < div class="item feedback"> 
+92:  < i class="iconfont icon-fankui"> < /i> 
+93:  < /div> 
+94:  < div class="item qr-code"> 
+95:  < i class="iconfont icon-weixin"> < /i> 
+96:  < /div> 
+97:  < div class="item back-top"> 
+98:  < i class="iconfont icon-TOP"> < /i> 
+99:  < /div> 
+100:  < /div> 
+102:  < div class="feedback-content hide"> 
+103:  < input type="hidden" id="feedback-userLogin" value="0"> 
+104:  < div class="feedback-title clearfix"> 
+105:  < div class="pull-left"> 产品反馈< /div> 
+106:  < div class="pull-right mr10"> 
+107:  < a href="javascript:;" class="feedback-close icon-close"> < /a> 
+108:  < /div> 
+109:  < /div> 
+110:  < div class="feedback-box"> 
+111:  < form action="/user/feedback/add" class="c-form-vertical form-feedback" onsubmit="return false"> 
+112:  < input type="hidden" name="images"> 
+113:  < label> 问题类型< /label> 
+114:  < div class="form-group form-group-b"> 
+115:  < div class="c-radio-inline"> 
+116:  < label> 
+117:  < input name="type" type="radio" value="1" data-required="type" checked> 
+118:  < i class="icon iconfont"> < /i> 产品相关< /label> 
+119:  < /div> 
+120:  < div class="c-radio-inline"> 
+121:  < label> 
+122:  < input name="type" type="radio" value="2" data-required="type"> 
+123:  < i class="icon iconfont"> < /i> 使用故障< /label> 
+124:  < /div> 
+125:  < /div> 
+126:  < div class="form-group"> 
+127:  < div class="clearfix"> 
+128:  < div class="tcolor-dark pull-left"> 问题描述< /div> 
+129:  < div class="tf-s tcolor-light pull-right"> 
+130:  < a href="/user/feedback"> 反馈列表< /a> 
+131:  < /div> 
+132:  < /div> 
+133:  < textarea name="content" class="form-control form-callback" style="resize:none" placeholder="最多可输入400字" data-required="content"
+134:  maxlength="400"> < /textarea> 
+135:  < /div> 
+136:  < div class="form-group"> 
+137:  < !--dom结构部分--> 
+138:  < div id="uploader-demo"> 
+139:  < !--用来存放item--> 
+140:  < div id="fileList" class="uploader-list"> 
+141:  < /div> 
+142:  < div id="filePicker" data-token=""> 选择图片
+143:  < span class="tf-s ml5 tcolor-light"> (支持JPG/GIF/PNG，单张不超过2MB)< /span> 
+144:  < /div> 
+145:  < /div> 
+146:  < /div> 
+147:  < div class="form-group tc"> 
+148:  < a href="javascript:;" class="btn btn-primary btn-feedback"> 提交< /a> 
+149:  < /div> 
+151:  < input type="hidden" name="_csrf" value="pQubjHVS-2dTHFhMjGXNNeOXWf25U67P9CEs" /> < /form> 
+152:  < /div> 
+153:  < /div> 
+155:  < div class="qr-code-content hide"> 
+156:  < img width="100" height="100" src="/images/index/wechat.png" alt=""> 
+157:  < /div> 
+159:  < div class="header-front"> 
+160:  < a href="/" class="logo pull-left"> < i class="iconfont icon-logo"> < /i> < /a> 
+161:  < ul class="nav-header"> 
+162:  < li class="nav-item"> < a href="/"> 首页< /a> < /li> 
+163:  < li class="nav-item"> 
+164:  < a href="/ranking/day"> 排行榜< /a> 
+165:  < ul class="nav-sub"> 
+166:  < li class="nav-sub-item"> < a href="/ranking/day"> 日流量排行榜< /a> < /li> 
+167:  < li class="nav-sub-item"> < a href="/ranking/week"> 周流量排行榜< /a> < /li> 
+168:  < li class="nav-sub-item"> < a href="/ranking/os"> 操作系统排行榜< /a> < /li> 
+169:  < li class="nav-sub-item"> < a href="/ranking/search_engine"> 搜索引擎排行榜< /a> < /li> 
+170:  < li class="nav-sub-item"> < a href="/ranking/browser"> 浏览器排行榜< /a> < /li> 
+171:  < /ul> 
+172:  < /li> 
+173:  < li class="nav-item"> < a href="/news/list"> 动态资讯< /a> < /li> 
+174:  < li class="nav-item"> < a href="/doc/" target="_blank"> 帮助文档< /a> < /li> 
+175:  < li class="nav-item"> < a href="javascript:;" class="item feedback"> 意见反馈< /a> < /li> 
+176:  < /ul> 
+177:  < div class="panel-user"> 
+179:  < div class="pull-right"> 
+180:  < div class="entry"> < a href="/register" class="ml10 mr30"> 注册< /a> < a href="/login" class=""> 登录< /a> < /div> 
+181:  < /div> 
+182:  < div class="pull-right to-panel"> < a href="/report/main?comId=2260177" class="btn mr30"> 产品演示< /a> < /div> 
+184:  < /div> 
+185:  < /div> 
+188:  < div class="container"> 
+189:  < br> 
+190:  < br> 
+191:  < br> 
+192:  < br> 
+193:  < br> 
+194:  < div class="tc"> 
+195:  < img src=hxxp://images.vrm.cn/2017/08/01/404.png" width="400" height="217" alt=""> 
+196:  < /div> 
+197:  < br> 
+198:  < br> 
+199:  < div class="f18 fb c666 tc"> 抱歉！您访问的页面失联啦...< /div> 
+200:  < br> 
+201:  < div class="tc"> 
+202:  < a href="javascript:;" onclick="window.history.go(-1)"> 返回上一页< /a>     
+203:  < a href="/"> 返回首页< /a> 
+204:  < /div> 
+206:  < /div> 
+208:  < div class="home-footer"> 
+209:  < div class="content"> 
+210:  < div class="clearfix home-footer-nav"> 
+211:  < div class="col-3"> 
+212:  < h3 class="h3 mb20"> 广告合作< /h3> 
+213:  < p class="text"> 广告合作：1962406908（官方唯一QQ）< /p> 
+214:  < p class="text"> 客服服务：3187548973（QQ）< /p> 
+215:  < p class="text"> 邮箱：1962406908@qq.com< /p> 
+216:  < p class="text"> Q群：608879616< /p> 
+217:  < /div> 
+218:  < div class="col-3"> 
+219:  < h3 class="h3 mb20"> 文档中心< /h3> 
+220:  < p class="text"> < a href="/doc/ru-he-tian-jia-tong-ji-dai-ma-ff1f.html" target="_blank" class="text"> 使用帮助< /a> < /p> 
+221:  < p class="text"> < a href="/doc/tong-ji-zhi-biao-de-biao-zhun-shi-shi-yao-ff1f.html" target="_blank" class="text"> 指标释义< /a> < /p> 
+222:  < p class="text"> < a href="/service/update_log" target="_blank" class="text"> 更新日志< /a> < /p> 
+223:  < /div> 
+224:  < div class="col-2 pull-right"> 
+225:  < h3 class="h3 mb20"> 关注51LA< /h3> 
+226:  < img src=hxxp://images.51.la/v5/images/index/wechat.png" alt="二维码" width="130" height="130" /> 
+227:  < /div> 
+228:  < /div> 
+229:  < div class="bottom"> 
+230:  < div class="lh-l link"> 
+231:  < a href="/service/terms_of_service"> 用户协议< /a> < a href="/service/copyright_notice"> 版权声明< /a> < a href="/login#forget"> 找回密码< /a> 
+232:  < a href="/service/biz_contact"> 广告联系< /a> < a href="/service/special_user"> 典型用户< /a> < a href="/service/friend_link"> 友情链接< /a> 
+233:  < /div> 
+234:  < div class="lh-l mt5"> 
+235:  < span> Copyright © 2002-2019 51.la All Rights Reserved< /span> |< a href="http://www.miitbeian.gov.cn/" target="_blank"> 粤ICP备17055553号-1< /a> |< a
+236:  target="_blank"
+237:  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602004893"
+238:  > 粤公网安备 44010602004893号< /a
+239:  > 
+240:  < /div> 
+241:  < /div> 
+242:  < /div> 
+243:  < /div> 
+245:  < sc​ript src=hxxp://images.51.la/v5/js/vendor/jquery.js?v=1548481186681"> < / sc​ript > 
+246:  < sc​ript src=hxxp://images.51.la/v5/js/vendor/arttemplate.js?v=1548481186681"> < / sc​ript > 
+247:  < sc​ript src=hxxp://images.51.la/v5/dist/global.js?v=1548481186681"> < / sc​ript > 
+248:  < sc​ript > 
+249:  if (!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+250:  (func​tion (){var hm=document.create​Element(" sc​ript ");hm.src=hxxp://kf.51.la/smartAi.js?appId=6c205222d07e41de8dd7a6339ac8ef8b";hm.charset='UTF-8';var s=document.getElementsByTagName(" sc​ript ")[0];s.parentNode.insertBefore(hm,s)})();
+251:  }
+252:  < / sc​ript > 
+254:  < div class="hide"> 
+255:  < !-- 51la --> 
+256:  < sc​ript type="text/javascript" src=hxxp://js.users.51.la/19236546.js"> < / sc​ript > 
+257:  < !-- Global site tag (gtag.js) - Google Analytics --> 
+258:  < !-- < sc​ript async src="https://www.googletagmanager.com/gtag/js?id=UA-112772236-1"> < / sc​ript > --> 
+259:  < !-- < sc​ript > 
+260:  window.dataLayer = window.dataLayer || [];
+261:  func​tion gtag() { dataLayer.push(arguments); }
+262:  gtag('js', new Date());
+263:  gtag('config', 'UA-112772236-1');
+264:  < / sc​ript > --> 
+265:  < !-- baidu detect --> 
+266:  < sc​ript > 
+267:  var _hmt = _hmt || []
+268:  ;(func​tion () {
+269:  var hm = document.create​Element(' sc​ript ')
+270:  hm.src = 'https://hm.baidu.com/hm.js?bd18429bc8eb892f081d3f995c802e1e'
+271:  var s = document.getElementsByTagName(' sc​ript ')[0]
+272:  s.parentNode.insertBefore(hm, s)
+273:  })()
+274:  < / sc​ript > 
+275:  < !-- cnzz detect --> 
+276:  < sc​ript src="https://s22.cnzz.com/z_stat.php?id=1273154340&web_id=1273154340" language="JavaScript"> < / sc​ript > 
+277:  < !-- 51la image detect --> 
+278:  < img src="https://ia.51.la/go1?id=19421897&pvFlag=1" /> 
+279:  < /div> 
+281:  < /body> 
+282:  < /html> 
